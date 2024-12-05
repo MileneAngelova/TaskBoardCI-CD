@@ -5,6 +5,12 @@ terraform {
       version = "4.11.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "TBoardStorageRG"
+    storage_account_name = "tboardstoragema"
+    container_name       = "tboardstoragema"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
